@@ -38,7 +38,7 @@ class RaiseOnUnpermittedParamsTest < ActiveSupport::TestCase
       key => "Turnips"
     })
 
-    assert_nothing_raised() do
+    assert_nothing_raised do
       params.permit()
     end
   end
