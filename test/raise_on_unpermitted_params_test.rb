@@ -32,14 +32,13 @@ class RaiseOnUnpermittedParamsTest < ActiveSupport::TestCase
   end
   
   test "not raise on params included in NEVER_UNPERMITTED_PARAMS" do
-    # NEVER_UNPERMITTED_PARAMS = %w( controller action )
     key = ActionController::Parameters::NEVER_UNPERMITTED_PARAMS[0]
     params = ActionController::Parameters.new({
       key => "Turnips"
     })
 
     assert_nothing_raised do
-      params.permit()
+      params.permit
     end
   end
 end
